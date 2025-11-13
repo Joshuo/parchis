@@ -18,7 +18,7 @@ public class Tablero {
     }
     
     private void inicializarCasillas() {
-        //Aqui irian las con sus coordenadas... SI TUVIERA ALGUNA    >:(
+        //Aqui irian las coordenadas... SI TUVIERA ALGUNA    >:(
         //Ejemplo: casillas[0] = new Casilla(1, 80, 500, false, "normal");
         //Casillas especiales: 68, 63, 51, 46, 34, 29, 17, 12
         //casillas[11] = new Casilla(12, 320, 420, true, "especial");

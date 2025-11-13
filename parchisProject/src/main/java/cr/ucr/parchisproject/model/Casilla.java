@@ -14,7 +14,7 @@ public class Casilla {
     private int x;
     private int y;
     private boolean esEspecial;
-    private String tipo;
+    private String tipo; //Normal, especial, salida, meta
 
     public Casilla(int numero, int x, int y, boolean esEspecial, String tipo) {
         this.numero = numero;
