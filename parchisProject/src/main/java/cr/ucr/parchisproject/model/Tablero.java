@@ -10,14 +10,20 @@ package cr.ucr.parchisproject.model;
  */
 public class Tablero {
     
-    private Casilla[] casillas;
+    private Casilla[] caminoPrincipal; // 1–68
+    private Casilla[][] caminoFinal;   // 4 colores, 7 casillas cada uno
+    
+    private final String[] colores = {"rojo", "azul", "amarillo", "verde"};
     
     public Tablero() {
-        casillas = new Casilla[68];
-        inicializarCasillas();
+        caminoPrincipal = new Casilla[68];
+        caminoFinal = new Casilla[4][7]; // 4 colores x 7 casillas finales
+        inicializarCaminoPrincipal();
+        inicializarCaminosFinales();
     }
     
-    private void inicializarCasillas() {
+    //Camino Principal 1-68
+    private void inicializarCaminoPrincipal() {
         //Aqui irian las coordenadas... SI TUVIERA ALGUNA    >:(
         //Ejemplo: casillas[0] = new Casilla(1, 80, 500, false, "normal");
         //Casillas especiales: 68, 63, 51, 46, 34, 29, 17, 12
@@ -26,21 +32,36 @@ public class Tablero {
         //Esto se pospone xq que pereza
     }
     
-    //Retorna la casilla según su número (1–68)
-    public Casilla obtenerCasilla(int numero) {
-        return casillas[numero - 1];
+    //Camino Final 
+    private void inicializarCaminosFinales() {
+        // Color 0 = rojo
+        // Color 1 = azul
+        // Color 2 = amarillo
+        // Color 3 = verde
+        for (int color = 0; color < 4; color++) {
+            for (int i = 0; i < 7; i++) {
+                //caminoFinal[color][i] = new Casilla(100 + (color * 10),  X, Y, false, "final");
+            }
+        }
     }
     
-    //Retorna las coordenadas (x, y) de una casilla específica
+    //Retorna la casilla del camino principal según su número (1–68)
+    public Casilla obtenerCasillaPrincipal(int numero) {
+        return caminoPrincipal[numero - 1];
+    }
+    
+    //Retorna las coordenadas (x, y) de una casilla del camino principal
     public int[] getCoordenadas(int numeroCasilla) {
-        Casilla c = obtenerCasilla(numeroCasilla);
-        if (c != null) {
-            return new int[]{c.getX(), c.getY()};
+        if (numeroCasilla < 1 || numeroCasilla > 68) {
+            return new int[]{0, 0};
         }
-        return new int[]{0, 0};
+        Casilla c = caminoPrincipal[numeroCasilla - 1];
+        return new int[]{c.getX(), c.getY()};
     }
 
-    
-    
-    
+    //Devuelve una casilla del camino final según color y posición
+    public Casilla obtenerCasillaFinal(int color, int posicion) {
+        return caminoFinal[color][posicion];
+    }
+  
 }

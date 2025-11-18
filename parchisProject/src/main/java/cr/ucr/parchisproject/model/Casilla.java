@@ -13,17 +13,21 @@ public class Casilla {
     private int numero;
     private int x;
     private int y;
-    private boolean esEspecial;
+    private boolean especial;
     private String tipo; //Normal, especial, salida, meta
+    private String color; // solo para casillas del camino final, se me olvido el camino final (-.-")
 
     public Casilla(int numero, int x, int y, boolean esEspecial, String tipo) {
         this.numero = numero;
         this.x = x;
         this.y = y;
-        this.esEspecial = esEspecial;
+        this.especial = especial;
         this.tipo = tipo;
+        this.color = null;//Voy hacer que el tablero setee el color si es final
     }
 
+    
+    //Gets y Sets
     public int getNumero() {
         return numero;
     }
@@ -48,14 +52,14 @@ public class Casilla {
         this.y = y;
     }
 
-    public boolean isEsEspecial() {
-        return esEspecial;
+    public boolean isEspecial() {
+        return especial;
     }
 
-    public void setEsEspecial(boolean esEspecial) {
-        this.esEspecial = esEspecial;
+    public void setEspecial(boolean especial) {
+        this.especial = especial;
     }
-
+    
     public String getTipo() {
         return tipo;
     }
@@ -67,11 +71,18 @@ public class Casilla {
     public int[] getCoordenadas(){
         return new int []{x, y};
     }
-    
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public String toString() {
-        return "Casilla{" + "numero=" + numero + ", x=" + x + ", y=" + y + ", esEspecial=" + esEspecial + ", tipo=" + tipo + '}';
+        return "Casilla{" + "numero=" + numero + ", x=" + x + ", y=" + y + ", especial=" + especial + ", tipo=" + tipo + ", color=" + color + '}';
     }
-    
     
 }

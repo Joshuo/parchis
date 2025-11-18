@@ -4,6 +4,9 @@
 
 package cr.ucr.parchisproject;
 
+import cr.ucr.parchisproject.view.GUIMenu;
+import cr.ucr.parchisproject.controller.ControladorMenu;
+
 /**
  *
  * @author Xpc
@@ -11,6 +14,16 @@ package cr.ucr.parchisproject;
 public class ParchisProject {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        // Iniciar interfaz gráfica en el hilo de eventos
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+
+                GUIMenu menu = new GUIMenu();
+                new ControladorMenu(menu);
+                menu.setVisible(true);
+            }
+        });
     }
 }

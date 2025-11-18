@@ -20,6 +20,7 @@ public class Jugador {
     private ArrayList<Ficha> fichas;
     private boolean turnoActivo;
 
+    //Constructor
     public Jugador(String nombre, String color) {
         this.nombre = nombre;
         this.color = color;
@@ -28,8 +29,11 @@ public class Jugador {
         this.respuestasIncorrectas = 0;
         this.fichas = new ArrayList<Ficha>();
         this.turnoActivo = false;
+        inicializarFichas();
     }
 
+    
+    //Gets y sets
     public String getNombre() {
         return nombre;
     }
@@ -78,12 +82,12 @@ public class Jugador {
         this.fichas = fichas;
     }
 
-    public boolean isTurnoActivo() {
-        return turnoActivo;
+    public void activarTurno() {
+        turnoActivo = true;
     }
 
-    public void setTurnoActivo(boolean turnoActivo) {
-        this.turnoActivo = turnoActivo;
+    public void desactivarTurno() {
+        turnoActivo = false;
     }  
 
     @Override
@@ -91,11 +95,59 @@ public class Jugador {
         return "Jugador{" + "nombre=" + nombre + ", color=" + color + ", puntaje=" + puntaje + ", respuestasCorrectas=" + respuestasCorrectas + ", respuestasIncorrectas=" + respuestasIncorrectas + ", fichas=" + fichas + ", turnoActivo=" + turnoActivo + '}';
     }
     
+    //METODOS
     
-    public void agregarFicha(Ficha ficha) {
-        fichas.add(ficha);
+    //Creacion de fichas
+    private void inicializarFichas() {
+
+        int[][] coords = obtenerCoordenadasIniciales(color);
+
+        // Crea 4 fichas del mismo color
+        for (int i = 0; i < 4; i++) {
+            fichas.add(new Ficha(color, coords[i][0], coords[i][1]));
+        }
     }
     
+    //Coordenadas inciales segun el color
+    private int[][] obtenerCoordenadasIniciales(String color) {
+
+        int[][] coords = new int[4][2];
+
+        switch (color.toLowerCase()) {
+            case "rojo":
+                coords[0] = new int[]{110, 740};
+                coords[1] = new int[]{210, 60};
+                coords[2] = new int[]{110, 840};
+                coords[3] = new int[]{210, 840};
+                break;
+
+            case "azul":
+                coords[0] = new int[]{110, 110};
+                coords[1] = new int[]{210, 110};
+                coords[2] = new int[]{110, 210};
+                coords[3] = new int[]{210, 210};
+                break;
+
+            case "amarillo":
+                coords[0] = new int[]{740, 110};
+                coords[1] = new int[]{840, 110};
+                coords[2] = new int[]{740, 210};
+                coords[3] = new int[]{840, 210};
+                break;
+
+            case "verde":
+                coords[0] = new int[]{740, 740};
+                coords[1] = new int[]{840, 740};
+                coords[2] = new int[]{740, 840};
+                coords[3] = new int[]{840, 840};
+                break;
+        }
+
+        return coords;
+    }
+    
+    
+    //Puntuacion / Respuesta
     public void sumarPunto() { 
         puntaje++; 
     }
@@ -120,6 +172,7 @@ public class Jugador {
         restarPunto();
     }
     
+    //Reinicia al jugador
     public void reiniciar() {
         puntaje = 5;
         respuestasCorrectas = 0;

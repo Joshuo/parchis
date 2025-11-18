@@ -8,17 +8,21 @@ package cr.ucr.parchisproject.view;
  *
  * @author Xpc
  */
-public class Menu extends javax.swing.JFrame {
+public class GUIMenu extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());
-
     /**
-     * Creates new form Menu
+     * Creates new form GUIMenu
      */
-    public Menu() {
+    public GUIMenu() {
         initComponents();
     }
 
+    public MenuPanel getMenuPanel() {
+        return menuPanel1;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,23 +32,18 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botones2 = new cr.ucr.parchisproject.view.Botones();
-        intro1 = new cr.ucr.parchisproject.view.Intro();
+        menuPanel1 = new cr.ucr.parchisproject.view.MenuPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(botones2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
-        getContentPane().add(intro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(menuPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private cr.ucr.parchisproject.view.Botones botones2;
-    private cr.ucr.parchisproject.view.Intro intro1;
+    private cr.ucr.parchisproject.view.MenuPanel menuPanel1;
     // End of variables declaration//GEN-END:variables
 }
