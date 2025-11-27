@@ -19,9 +19,9 @@ public class Casilla {
 
     public Casilla(int numero, int x, int y, boolean esEspecial, String tipo) {
         this.numero = numero;
-        this.x = x;
-        this.y = y;
-        this.especial = especial;
+        this.x = x + 20;
+        this.y = y + 20;
+        this.especial = esEspecial;
         this.tipo = tipo;
         this.color = null;//Voy hacer que el tablero setee el color si es final
     }

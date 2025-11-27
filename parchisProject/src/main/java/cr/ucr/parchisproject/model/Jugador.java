@@ -116,7 +116,7 @@ public class Jugador {
         switch (color.toLowerCase()) {
             case "rojo":
                 coords[0] = new int[]{110, 740};
-                coords[1] = new int[]{210, 60};
+                coords[1] = new int[]{210, 740};
                 coords[2] = new int[]{110, 840};
                 coords[3] = new int[]{210, 840};
                 break;

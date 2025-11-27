@@ -4,19 +4,99 @@
  */
 package cr.ucr.parchisproject.view;
 
+import cr.ucr.parchisproject.model.Jugador;
+import java.awt.Image;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 /**
  *
  * @author Xpc
  */
 public class PanelControles extends javax.swing.JPanel {
 
+    private ArrayList<Jugador> jugadores;
+    private Image[] imagenesDado; // imágenes 1–6
+    
     /**
      * Creates new form PanelControles
      */
     public PanelControles() {
         initComponents();
+        jugadores = new ArrayList<>();
+        cargarImagenesDado();
+    }
+    
+    public void listen(ActionListener controller) {
+        btnDado.addActionListener(controller);
+        btnReiniciar.addActionListener(controller);
+        btnSalir.addActionListener(controller);
+    }
+    
+    private void cargarImagenesDado() {
+    imagenesDado = new Image[7];
+    try {
+        for (int i = 1; i <= 6; i++) {
+            imagenesDado[i] = new ImageIcon(
+                getClass().getResource("/img/Dado" + i + ".jpg")
+            ).getImage();
+        }
+    } catch (Exception e) {
+        System.out.println("Error cargando imágenes del dado.");
+    }
+}
+    
+    public void actualizarDado(int numero) {
+        if (numero >= 1 && numero <= 6) {
+            btnDado.setIcon(new ImageIcon(imagenesDado[numero]));
+        }
+    }
+    
+    //Recibir jugadores
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+
+        if (jugadores.size() >= 1) {
+            txtPuntajeJug1.setText("Puntaje: " + jugadores.get(0).getPuntaje());
+        }
+        if (jugadores.size() >= 2) {
+            txtPuntajeJug2.setText("Puntaje: " + jugadores.get(1).getPuntaje());
+        }
+    }
+    
+    public void actualizarPuntajes() {
+        if (jugadores.size() >= 1)
+            txtPuntajeJug1.setText("Puntaje: " + jugadores.get(0).getPuntaje());
+        if (jugadores.size() >= 2)
+            txtPuntajeJug2.setText("Puntaje: " + jugadores.get(1).getPuntaje());
     }
 
+    public void actualizarCronometro(String tiempo) {
+        txtCrono.setText("Tiempo: " + tiempo);
+    }
+    
+    public javax.swing.JButton getBotonDado() {
+        return btnDado;
+    }
+
+    public JButton getBtnDado() {
+        return btnDado;
+    }
+
+    public JButton getBtnReiniciar() {
+        return btnReiniciar;
+    }
+
+    public JButton getBtnSalir() {
+        return btnSalir;
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,19 +106,61 @@ public class PanelControles extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        btnDado = new javax.swing.JButton();
+        txtCrono = new javax.swing.JLabel();
+        imgJug2 = new javax.swing.JLabel();
+        txtPuntajeJug2 = new javax.swing.JLabel();
+        imgJug1 = new javax.swing.JLabel();
+        txtPuntajeJug1 = new javax.swing.JLabel();
+        btnReiniciar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(200, 930));
+        setRequestFocusEnabled(false);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Dado1.jpg"))); // NOI18N
+        btnDado.setToolTipText("");
+        btnDado.setActionCommand("Dado");
+        add(btnDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        txtCrono.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtCrono.setForeground(new java.awt.Color(255, 255, 255));
+        txtCrono.setText("Tiempo: ");
+        add(txtCrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, -1, -1));
+
+        imgJug2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FondoJugador.png"))); // NOI18N
+        add(imgJug2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+
+        txtPuntajeJug2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtPuntajeJug2.setForeground(new java.awt.Color(255, 255, 255));
+        txtPuntajeJug2.setText("Puntaje:");
+        add(txtPuntajeJug2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, -1, -1));
+
+        imgJug1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FondoJugador.png"))); // NOI18N
+        add(imgJug1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+
+        txtPuntajeJug1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtPuntajeJug1.setForeground(new java.awt.Color(255, 255, 255));
+        txtPuntajeJug1.setText("Puntaje:");
+        add(txtPuntajeJug1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+
+        btnReiniciar.setText("Reiniciar");
+        add(btnReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 820, -1, -1));
+
+        btnSalir.setText("Salir");
+        add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 870, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDado;
+    private javax.swing.JButton btnReiniciar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel imgJug1;
+    private javax.swing.JLabel imgJug2;
+    private javax.swing.JLabel txtCrono;
+    private javax.swing.JLabel txtPuntajeJug1;
+    private javax.swing.JLabel txtPuntajeJug2;
     // End of variables declaration//GEN-END:variables
 }

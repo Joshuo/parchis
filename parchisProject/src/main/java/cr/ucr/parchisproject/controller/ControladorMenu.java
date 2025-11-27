@@ -7,12 +7,11 @@ package cr.ucr.parchisproject.controller;
 import cr.ucr.parchisproject.view.GUIMenu;
 import cr.ucr.parchisproject.view.MenuPanel;
 import cr.ucr.parchisproject.view.GUITablero;
-
 import cr.ucr.parchisproject.model.*;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 /**
  *
@@ -26,8 +25,6 @@ public class ControladorMenu implements ActionListener{
     public ControladorMenu(GUIMenu ventana) {
         this.gUIMenu = ventana;
         this.panel = ventana.getMenuPanel();
-
-        // Conectar botones del panel a este controlador
         this.panel.listen(this);
     }
 
@@ -35,7 +32,7 @@ public class ControladorMenu implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Jugar":
-                //iniciarJuego();
+                iniciarJuego();
                 break;
 
             case "Historial":
@@ -47,23 +44,29 @@ public class ControladorMenu implements ActionListener{
 
             case "Instrucciones":
                 JOptionPane.showMessageDialog(gUIMenu,
-                        "Instrucciones:\n\n" +
-                        "1. El jugador tira un dado.\n" +
-                        "2. Si cae en casilla especial, se pregunta.\n" +
-                        "3. Se avanza hacia la meta según el color.\n",
+                        """
+                        Instrucciones del juego Parchís Pokémon:
+                        
+                        • Tira el dado para mover tu ficha.
+                        • Si caes en una casilla especial, deberás responder una pregunta.
+                        • Las respuestas correctas dan puntos, las incorrectas restan.
+                        • Lleva tus fichas a la meta recorriendo el camino final según color.
+                        """,
                         "Instrucciones",
                         JOptionPane.INFORMATION_MESSAGE);
                 break;
 
             case "Creditos":
                 JOptionPane.showMessageDialog(gUIMenu,
-                        "Mira mami, estoy en los creditos\nDesarrollado por: Hugo Carranza",
+                        "Desarrollado por: Hugo Carranza\nUniversidad de Costa Rica",
                         "Créditos",
                         JOptionPane.INFORMATION_MESSAGE);
                 break;
         }
     }
 
+    
+    //Inicia la pantalla de juego, creando jugadores, tablero y controlador.
     private void iniciarJuego() {
 
         String nombre = panel.getNombreJugador();
@@ -75,14 +78,53 @@ public class ControladorMenu implements ActionListener{
                     JOptionPane.ERROR_MESSAGE);
             return;
         }
+
+        // Obtener color del panel
+        String colorElegido = panel.getColorSeleccionado();
+        if (colorElegido == null) {
+            JOptionPane.showMessageDialog(gUIMenu,
+                    "Debe elegir un color.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Color del rival
+        String colorRival = obtenerColorRival(colorElegido);
+
+        // Crear jugadores
+        Jugador jugador1 = new Jugador(nombre, colorElegido);
+        Jugador jugador2 = new Jugador("Rival", colorRival);
+
+        ArrayList<Jugador> listaJugadores = new ArrayList<>();
+        listaJugadores.add(jugador1);
+        listaJugadores.add(jugador2);
+
+        // Crear ventana del juego
+        GUITablero guiTablero = new GUITablero();
+
+        // Instanciar Tablero y controladores
+        Tablero tablero = new Tablero();
+        Dado dado = new Dado();
+        BancoPreguntas banco = new BancoPreguntas();
+        Temporizador temporizador = new Temporizador();
+
+        // Crear controlador del juego
+        new ControladorJuego(guiTablero, tablero, listaJugadores, dado, banco, temporizador);
+
+        // Cerrar menú e iniciar juego
+        guiTablero.setVisible(true);
+        gUIMenu.dispose();
     }
 
-    /*
+    //Devuelve el color rival dependiendo del escogido
     private String obtenerColorRival(String color) {
-        if (color.equalsIgnoreCase("Rojo")) return "Azul";
-        if (color.equalsIgnoreCase("Azul")) return "Rojo";
-        if (color.equalsIgnoreCase("Amarillo")) return "Verde";
-        return "Amarillo";
+        return switch (color.toLowerCase()) {
+            case "rojo" -> "amarillo";
+            case "azul" -> "verde";
+            case "amarillo" -> "rojo";
+            default      -> "azul";
+        };
     }
-    */
+    
 }

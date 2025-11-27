@@ -21,7 +21,7 @@ public class ParchisProject {
             public void run() {
 
                 GUIMenu menu = new GUIMenu();
-                new ControladorMenu(menu);
+                ControladorMenu controlador = new ControladorMenu(menu);
                 menu.setVisible(true);
             }
         });

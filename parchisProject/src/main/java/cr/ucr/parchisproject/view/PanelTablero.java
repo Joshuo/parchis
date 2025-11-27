@@ -9,10 +9,9 @@ import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
-
 import cr.ucr.parchisproject.model.Ficha;
 import cr.ucr.parchisproject.model.Jugador;
+import java.awt.Dimension;
 
 /**
  *
@@ -30,9 +29,13 @@ public class PanelTablero extends javax.swing.JPanel {
         initComponents();
         
         jugadores = new ArrayList<>();
+        
+        setPreferredSize(new Dimension(1200, 1000));
+        setMinimumSize(new Dimension(1200, 1000));
+        setMaximumSize(new Dimension(1200, 1000));
 
         try {
-            imagenTablero = ImageIO.read(new File("resources/img/TableroJuego.png"));
+            imagenTablero = ImageIO.read(getClass().getResource("/img/TableroJuego.png"));
         } catch (Exception e) {
             System.out.println("Error cargando tablero.png");
         }
@@ -41,27 +44,25 @@ public class PanelTablero extends javax.swing.JPanel {
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
+
     
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // Dibujar tablero
+        // Dibujar tablero sin escalarlo
         if (imagenTablero != null) {
-            g.drawImage(imagenTablero, 0, 0, getWidth(), getHeight(), this);
+            g.drawImage(imagenTablero, 0, 0, 1200, 1000, this);
         }
 
         // Dibujar fichas
-        for (Jugador j : jugadores) {
-            for (Ficha ficha : j.getFichas()) {
-                if (ficha.getImagen() != null) {
-                    g.drawImage(
-                        ficha.getImagen(),
-                        ficha.getX() - 16,
-                        ficha.getY() - 16,
-                        32, 32,
-                        this
-                    );
+        if (jugadores != null) {
+            for (Jugador jugador : jugadores) {
+                for (Ficha ficha : jugador.getFichas()) {
+                    Image imgFicha = ficha.getImagen();//Obtiene la imagen PNG asociada a la ficha
+                    if (imgFicha != null) {
+                        g.drawImage(imgFicha, ficha.getX() - 20, ficha.getY() - 20, 40, 40, this); //imagen, x, y, ancho, alto, observer, los -20 son para agarrar el centro exacto de la ficha
+                    }
                 }
             }
         }

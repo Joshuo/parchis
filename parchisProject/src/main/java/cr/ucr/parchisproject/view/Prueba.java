@@ -94,6 +94,39 @@ public class Prueba extends javax.swing.JPanel {
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -201,7 +234,7 @@ public class Prueba extends javax.swing.JPanel {
         add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 840, -1, -1));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
-        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 480, -1, -1));
+        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 41, 200, 930));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
         add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 580, -1, -1));
@@ -302,6 +335,105 @@ public class Prueba extends javax.swing.JPanel {
         jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
         add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
+        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 480, -1, -1));
+
+        jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 480, -1, -1));
+
+        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 480, -1, -1));
+
+        jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, -1, -1));
+
+        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 480, -1, -1));
+
+        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 480, -1, -1));
+
+        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, -1, -1));
+
+        jLabel77.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, -1, -1));
+
+        jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(664, 480, -1, -1));
+
+        jLabel79.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(707, 480, -1, -1));
+
+        jLabel80.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 480, -1, -1));
+
+        jLabel81.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 480, -1, -1));
+
+        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 480, -1, -1));
+
+        jLabel83.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(885, 480, -1, -1));
+
+        jLabel84.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 545, -1, -1));
+
+        jLabel85.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 663, -1, -1));
+
+        jLabel86.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 707, -1, -1));
+
+        jLabel87.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 750, -1, -1));
+
+        jLabel88.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 795, -1, -1));
+
+        jLabel89.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 840, -1, -1));
+
+        jLabel90.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 885, -1, -1));
+
+        jLabel91.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 75, -1, -1));
+
+        jLabel92.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, -1, -1));
+
+        jLabel93.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 165, -1, -1));
+
+        jLabel94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, -1, -1));
+
+        jLabel95.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 255, -1, -1));
+
+        jLabel96.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 298, -1, -1));
+
+        jLabel97.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 345, -1, -1));
+
+        jLabel98.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 480, -1, -1));
+
+        jLabel99.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 480, -1, -1));
+
+        jLabel100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 615, -1, -1));
+
+        jLabel101.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 415, -1, -1));
+
+        jLabel102.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaElectrico.png"))); // NOI18N
+        add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 480, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TableroJuego.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -310,6 +442,9 @@ public class Prueba extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -375,7 +510,37 @@ public class Prueba extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     // End of variables declaration//GEN-END:variables
 }
