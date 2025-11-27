@@ -115,6 +115,7 @@ public class PanelControles extends javax.swing.JPanel {
         btnReiniciar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
 
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(200, 930));
         setRequestFocusEnabled(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

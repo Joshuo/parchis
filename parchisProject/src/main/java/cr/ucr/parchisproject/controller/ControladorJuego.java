@@ -29,6 +29,7 @@ public class ControladorJuego implements ActionListener {
     private BancoPreguntas bancoPreguntas;
     private Temporizador temporizador;
     private Timer timerSwing;//Refresca cronometro en la cista
+    private RecursoSonido sonido;
 
     private Jugador jugador1;
     private Jugador jugador2;
@@ -68,6 +69,10 @@ public class ControladorJuego implements ActionListener {
         // Temporizador
         temporizador.iniciar();
         iniciarTimerSwing();
+
+        // Inicializar música del juego
+        sonido = new RecursoSonido();
+        sonido.cargarYReproducir("/audio/PokemonSoundParchis.wav", true);
 
         // Actualizar cronómetro
         panelControles.actualizarCronometro(temporizador.getTiempoFormateado());
@@ -328,12 +333,12 @@ public class ControladorJuego implements ActionListener {
 
     // Cambia el turno entre jugador1 y jugador2
     private void cambiarTurno() {
-    if (jugadorActual == jugador1) {
-        jugadorActual = jugador2;
-    } else {
-        jugadorActual = jugador1;
+        if (jugadorActual == jugador1) {
+            jugadorActual = jugador2;
+        } else {
+            jugadorActual = jugador1;
+        }
     }
-}
 
     // Reinicia por completo la partida (sin cerrar ventana)
     private void reiniciarPartida() {
@@ -349,6 +354,7 @@ public class ControladorJuego implements ActionListener {
         );
 
         if (opcion == JOptionPane.YES_OPTION) {
+            if (sonido != null) sonido.detener();
             temporizador.detener();
             if (timerSwing != null) {
                 timerSwing.stop();

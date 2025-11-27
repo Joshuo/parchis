@@ -7,6 +7,7 @@ package cr.ucr.parchisproject.model;
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 /**
  *
@@ -18,31 +19,44 @@ public class RecursoSonido {
     
     public void cargarYReproducir(String ruta, boolean loop) {
         try {
-            File audioFile = new File(ruta);
-            if (!audioFile.exists()) return;
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(audioFile);
+            URL url = getClass().getResource(ruta);
+
+            if (url == null) {
+                System.out.println("ERROR: No se encontró el archivo de audio: " + ruta);
+                return;
+            }
+
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
             clip = AudioSystem.getClip();
             clip.open(audioIn);
+
             if (loop) {
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
             } else {
                 clip.start();
             }
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-            ex.printStackTrace();
+
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
         }
     }
 
     public void reproducirEfecto(String ruta) {
         try {
-            File audioFile = new File(ruta);
-            if (!audioFile.exists()) return;
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(audioFile);
+            URL url = getClass().getResource(ruta);
+
+            if (url == null) {
+                System.out.println("ERROR: No se encontró el efecto de sonido: " + ruta);
+                return;
+            }
+
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
             Clip clipEfecto = AudioSystem.getClip();
             clipEfecto.open(audioIn);
             clipEfecto.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-            ex.printStackTrace();
+
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
         }
     }
 
